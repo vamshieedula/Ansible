@@ -1,0 +1,16 @@
+- name: varaibles from files
+  hosts: localhost
+  tasks:
+    - name: print information
+      ansible.builtin.debug:
+        msg: "Hi, {{PERSON}} wishing {{WISHES}}"
+# to be passed while running the command
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 08-vars-arguments.yaml -e "PERSON=Ramesh WISHES=Moring"
+
+# order of execution of variables
+# 1. Arguments
+# 2. Task level
+# 3. Variables files
+# 4. Prompt
+# 5. Play level
+# 6. Inventory
